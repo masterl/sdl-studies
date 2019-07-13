@@ -15,9 +15,6 @@ class Sdl
 
     SdlVersion version_compile_with() const;
     SdlVersion version_linked_to() const;
-
-    private:
-    SdlWindow main_window;
 };
 
 #endif

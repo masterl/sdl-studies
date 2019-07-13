@@ -1,32 +1,23 @@
 #include <exception>
 #include <iostream>
 
+#include "engine/Engine.hpp"
 #include "engine/exceptions/EngineException.hpp"
-#include "engine/sdl/Sdl.hpp"
 
 int main()
 {
     try
     {
-        Sdl sdl;
+        Engine engine;
 
         {
-            SdlVersion version = sdl.version_compile_with();
+            SdlVersion version = engine.sdl.version_compile_with();
             std::cout << "Compiled with SDL " << version << '\n';
         }
 
         {
-            SdlVersion version = sdl.version_linked_to();
+            SdlVersion version = engine.sdl.version_linked_to();
             std::cout << "Linked to SDL " << version << '\n';
-        }
-
-        SdlWindow window;
-
-        window.reset( SDL_CreateWindow( "SDL test", 50, 50, 800, 600, SDL_WINDOW_OPENGL ) );
-
-        if( window == nullptr )
-        {
-            std::cerr << "Could not create window: " << SDL_GetError() << std::endl;
         }
 
         SDL_Delay( 3000 );
