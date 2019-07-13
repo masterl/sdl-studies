@@ -39,8 +39,9 @@ CXXFLAGS += -isystem $(PROJECT_ROOT)/vendor
 #GOOGLETESTFLAGS = -lgmock_main -lgmock -lgtest
 #STACKTRACEFLAGS = -rdynamic
 #PTHREADFLAG = -lpthread
+SDL2FLAGS := -lSDL2
 
-#LINKFLAGS := -lboost_filesystem -lboost_system
+LINKFLAGS := $(SDL2FLAGS)
 ifeq ($(MAKECMDGOALS),test)
 	TESTFLAGS :=
 endif
