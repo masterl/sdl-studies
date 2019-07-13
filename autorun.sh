@@ -11,9 +11,9 @@ function main()
   # ensure_main_file_exists "tests"
 
   while true; do
-  find "$PROJECT_ROOT/src" -type f |
-  grep -E "$C_CPP_EXTENSIONS_REGEX" |
-  entr -d bash entr_script.sh "$PROJECT_ROOT"
+    find "$PROJECT_ROOT/src" -type f |
+      grep -E "$C_CPP_EXTENSIONS_REGEX" |
+      entr -d bash entr_script.sh "$PROJECT_ROOT"
   done
 }
 
