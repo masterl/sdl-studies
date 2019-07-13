@@ -9,6 +9,16 @@ int main()
     try
     {
         SDLBase base;
+
+        {
+            SdlVersion version = base.version_compile_with();
+            std::cout << version << '\n';
+        }
+
+        {
+            SdlVersion version = base.version_linked_to();
+            std::cout << version << '\n';
+        }
     }
     catch( EngineException &exception )
     {

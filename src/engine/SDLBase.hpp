@@ -4,6 +4,7 @@
 #include <SDL2/SDL.h>
 
 #include "exceptions/SDLException.hpp"
+#include "sdl/SdlVersion.hpp"
 
 class SDLBase
 {
@@ -11,8 +12,8 @@ class SDLBase
     SDLBase();
     ~SDLBase();
 
-    SDL_version version_compile_with() const;
-    SDL_version version_linked_to() const;
+    SdlVersion version_compile_with() const;
+    SdlVersion version_linked_to() const;
 
     private:
 };
