@@ -2,22 +2,36 @@
 #include <iostream>
 
 #include "engine/Engine.hpp"
+#include "engine/FilePath.hpp"
 #include "engine/exceptions/EngineException.hpp"
 
 int main()
 {
+    using std::cout;
+
+    // INVESTIGAR:
+    // free(): invalid pointer
+
+    // FilePath path{"teste/"};
+    //
+    // // path.join( "soh_um" );
+    //
+    // path.join( {"um", "dois", "tres"} );
+
+    return 0;
+
     try
     {
         Engine engine;
 
         {
             SdlVersion version = engine.sdl.version_compile_with();
-            std::cout << "Compiled with SDL " << version << '\n';
+            cout << "Compiled with SDL " << version << '\n';
         }
 
         {
             SdlVersion version = engine.sdl.version_linked_to();
-            std::cout << "Linked to SDL " << version << '\n';
+            cout << "Linked to SDL " << version << '\n';
         }
 
         SDL_Delay( 3000 );

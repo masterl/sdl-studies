@@ -1,12 +1,17 @@
 #include "AssetsManager.hpp"
 
+// #include <boost/filesystem.hpp>
+
 #include "sdl/SdlBasePath.hpp"
 
-AssetsManager::AssetsManager( std::string const &base_path )
-    : base_path{base_path}
+// using bfs = boost::filesystem;
+
+AssetsManager::AssetsManager( std::string const &assets_folder_path )
+    : assets_folder_path{assets_folder_path}
 {
 }
 
-AssetsManagerPtr AssetsManager::crete_new( char const *const base_path )
+AssetsManagerPtr AssetsManager::crete_new( std::string const &assets_folder_path )
 {
+    return std::unique_ptr< AssetsManager >( new AssetsManager( assets_folder_path ) );
 }
