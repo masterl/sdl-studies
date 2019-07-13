@@ -9,9 +9,6 @@ class Engine
     Engine();
 
     Sdl sdl;
-
-    private:
-    SdlWindow main_window;
 };
 
 #endif

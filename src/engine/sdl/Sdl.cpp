@@ -22,11 +22,29 @@ Sdl::Sdl()
     {
         throw SDLException( "Unable to initialize SDL!" );
     }
+
+    initialize_main_window();
+    initialize_main_renderer();
 }
 
 Sdl::~Sdl()
 {
     SDL_Quit();
+}
+
+void Sdl::initialize_main_window()
+{
+    main_window.reset( SDL_CreateWindow( "SDL test", 50, 50, 800, 600, SDL_WINDOW_OPENGL ) );
+
+    if( main_window == nullptr )
+    {
+        throw SDLException( "Could not create window: " );
+    }
+}
+
+void Sdl::initialize_main_renderer()
+{
+    main_renderer.reset( SDL_CreateRenderer( main_window.get(), -1, SDL_RENDERER_ACCELERATED ) );
 }
 
 SdlVersion Sdl::version_compile_with() const
