@@ -1,10 +1,10 @@
-#include "SDLBase.hpp"
+#include "Sdl.hpp"
 
 #include <SDL2/SDL_version.h>
 
 #include <iostream>
 
-SDLBase::SDLBase()
+Sdl::Sdl()
 {
     // SDL_INIT_TIMER      timer subsystem
     // SDL_INIT_AUDIO      audio subsystem
@@ -24,12 +24,12 @@ SDLBase::SDLBase()
     }
 }
 
-SDLBase::~SDLBase()
+Sdl::~Sdl()
 {
     SDL_Quit();
 }
 
-SdlVersion SDLBase::version_compile_with() const
+SdlVersion Sdl::version_compile_with() const
 {
     SDL_version version;
 
@@ -38,7 +38,7 @@ SdlVersion SDLBase::version_compile_with() const
     return version;
 }
 
-SdlVersion SDLBase::version_linked_to() const
+SdlVersion Sdl::version_linked_to() const
 {
     SDL_version version;
 
